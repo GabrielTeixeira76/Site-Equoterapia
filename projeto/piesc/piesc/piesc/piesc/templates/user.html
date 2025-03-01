@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página do Usuário</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo à Página do Usuário</h1>
+        <nav>
+            <a href="/perfil">Perfil</a>
+            <a href="/configuracoes">Configurações</a>
+            <a href="/logout">Sair</a>
+        </nav>
+    </header>
+    <main class="content">
+        <section>
+            <h2>Informações do Usuário</h2>
+            <p><strong>Nome:</strong> João da Silva</p>
+            <p><strong>Email:</strong> joao@example.com</p>
+            <img src="caminho/para/foto_perfil.jpg" alt="Foto de Perfil" />
+        </section>
+        <section>
+            <h2>Atividades Recentes</h2>
+            <ul>
+                <li>Postou uma nova foto.</li>
+                <li>Comentou em um artigo.</li>
+                <li>Seguiu o usuário Maria.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Configurações</h2>
+            <p><a href="/editar-perfil">Editar Perfil</a></p>
+            <p><a href="/alterar-senha">Alterar Senha</a></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Sua Empresa</p>
+    </footer>
+</body>
+</html>

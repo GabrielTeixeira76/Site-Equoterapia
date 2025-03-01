@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Equoterapia</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        .cadastro-container {
+            position: relative;
+            width: 450px;
+            margin: 40px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cadastro-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .form-group label {
+            font-weight: bold;
+        }
+        
+        .form-group input {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        .cadastro-form button {
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        .cadastro-form button:hover {
+            background-color: #45a049;
+        }
+        
+        .cadastro-links {
+            text-align: center;
+            margin-top: 15px;
+        }
+        
+        .cadastro-links a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        
+        .cadastro-links a:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 0.3rem;
+            font-size: 0.8em;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        main {
+            padding-bottom: 60px; /* Espaço para o rodapé fixo */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Equoterapia</h1>
+        <nav>
+            <a href="/">Início</a>
+            <a href="/sobre">Sobre</a>
+            <a href="/login">Login</a>
+            <a href="/cadastro">Cadastre-se</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="cadastro-container">
+            <h2>Cadastro</h2>
+            <form class="cadastro-form" method="POST" action="{% url 'cadastro' %}">
+                {% csrf_token %}
+                {% comment %} <div class="form-group">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" required minlength="8">
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmar_senha">Confirmar Senha:</label>
+                    <input type="password" id="confirmar_senha" name="confirmar_senha" required>
+                </div>
+                
+                
+                <div class="cadastro-links">
+                    <p>Já tem uma conta? <a href="/login">Faça login</a></p>
+                    </div> {% endcomment %}
+                    <button type="submit">Cadastrar</button>
+                {{ form }}
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>Contato: contato@equoterapia.com.br | (11) 9999-8888</p>
+    </footer>
+</body>
+</html>

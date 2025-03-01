@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Perfil</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Página de Perfil</h1>
+        <nav>
+            <a href="/user">Usuário</a>
+            <a href="/configuracoes">Configurações</a>
+            <a href="/inicio">Sair</a>
+        </nav>
+    </header>
+    <main class="content">
+        <section>
+            <h2>Informações Pessoais</h2>
+            <p><strong>Nome:</strong> João da Silva</p>
+            <p><strong>Email:</strong> joao@example.com</p>
+            <p><strong>Data de Nascimento:</strong> 01/01/1990</p>
+            <p><strong>Localização:</strong> São Paulo, Brasil</p>
+        </section>
+        <section>
+            <h2>Biografia</h2>
+            <p>Sou um desenvolvedor apaixonado por tecnologia e inovação. Gosto de aprender novas linguagens de programação e trabalhar em projetos desafiadores.</p>
+        </section>
+        <section>
+            <h2>Atividades Recentes</h2>
+            <ul>
+                <li>Postou uma nova foto.</li>
+                <li>Comentou em um artigo.</li>
+                <li>Seguiu o usuário Maria.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Configurações de Conta</h2>
+            <p><a href="/editar-perfil">Editar Perfil</a></p>
+            <p><a href="/#">Alterar Senha</a></p>
+            <p><a href="/preferencias">Preferências de Privacidade</a></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Sua Empresa</p>
+    </footer>
+</body>
+</html>

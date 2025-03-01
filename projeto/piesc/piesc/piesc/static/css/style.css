@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #2624a7;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.content {
+    flex: 1;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f0f8f0;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Estilos do Carrossel */
+.carrossel {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.carrossel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carrossel img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.carrossel-btn:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.carrossel-btn.prev {
+    left: 10px;
+}
+
+.carrossel-btn.next {
+    right: 10px;
+}
+
+.carrossel-indicadores {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+}
+
+.carrossel-indicador {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carrossel-indicador.ativo {
+    background-color: rgba(255,255,255,1);
+}

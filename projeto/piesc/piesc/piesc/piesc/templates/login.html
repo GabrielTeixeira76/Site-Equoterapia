@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Equoterapia</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        body {
+            background-color: #f0f0f0; /* Cor de fundo */
+            font-family: Arial, sans-serif;
+        }
+
+        .login-container {
+            width: 300px;
+            margin: 70px auto;
+            padding: 70px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 20px; /* Aumentar o espaçamento entre os campos */
+        }
+
+        .login-links {
+            display: flex;
+            justify-content: space-between; /* Distribuir os links */
+            margin-top: 15px; /* Aumentar o espaçamento acima dos links */
+        }
+
+
+        .form-group label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            padding: 15px; /* Aumentar o padding */
+            border: 1px solid #ddd;
+            border-radius: 12px; /* Bordas mais arredondadas */
+            font-size: 16px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group input:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            outline: none;
+        }
+
+        .login-form button {
+            padding: 12px;
+            background-color: #4CAF50; /* Cor do botão */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .login-form button:hover {
+            background-color: #45a049; /* Cor do botão ao passar o mouse */
+        }
+
+        .login-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .login-links a {
+            color: #4CAF50; /* Cor do link */
+            text-decoration: none;
+        }
+
+        .login-links a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Equoterapia</h1>
+        <nav>
+            <a href="/">Início</a>
+            <a href="/sobre">Sobre</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="login-container">
+            <h2>Login</h2>
+            <form class="login-form" method="POST" action="{% url 'perfil' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Usuário:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Entrar</button>
+                <div class="login-links">
+                    <a href="#">Esqueci a senha</a>
+                    <a href="{% url 'cadastro' %}">Cadastre-se</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>Contato: contato@equoterapia.com.br | (11) 9999-8888</p>
+    </footer>
+</body>
+</html>
