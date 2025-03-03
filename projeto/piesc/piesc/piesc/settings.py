@@ -110,8 +110,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'piesc/piesc/piesc/static'),
+    os.path.join(BASE_DIR, 'piesc/static'),
 ]
+
 
 
 # Default primary key field type

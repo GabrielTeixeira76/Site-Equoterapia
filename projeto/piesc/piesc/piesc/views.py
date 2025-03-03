@@ -35,10 +35,11 @@ def cadastro(request):
         password = form.cleaned_data['password']
         user = User.objects.create_user(username=username, email=email, password=password)
         user.save()
+        print(f"User created: {username}, Email: {email}")  # Log para depuração
         return redirect('login')  # Redirecionar para a página de login após o cadastro
 
+    print("Form is not valid:", form.errors)  # Log para depuração
     return render(request, 'cadastro.html', {'form': form})  # Renderizar a página de cadastro
-
 
 def user(request):
     return render(request, 'user.html')
