@@ -18,7 +18,7 @@
     </header>
     <main class="content">
         {% if user.is_authenticated %}
-        <form method="POST" action="{% url 'editar_perfil' %}">
+        <form class="editar_perfil" method="POST" action="{% url 'editar_perfil' %}">
             {% csrf_token %}
             <div>
                 <label for="nome">Nome:</label>
